@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Imperial+Script&family=Noto+Serif+JP:wght@200..900&family=Rochester&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Great+Vibes&family=Lobster&family=Mea+Culpa&family=Norican&family=Playfair+Display:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link 
+    href="node_modules/bootstrap/dist/css/bootstrap.css" 
+    rel="stylesheet"
+    >
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Imperial+Script&family=Monsieur+La+Doulaise&family=Noto+Serif+JP:wght@200..900&family=Rochester&display=swap" rel="stylesheet">
+   
+    <title>Triumphant</title>
+    <style>
+
+:root{
+    --yg-bg: #0b1220;
+    --yg-surface: rgba(255,255,255,.06);
+    --yg-stroke: rgba(255,255,255,.10);
+    --yg-text: rgba(255,255,255,.92);
+    --yg-muted: rgba(255,255,255,.70);
+    --yg-accent: #f2b233; /* gold */
+    --yg-primary: #6ea8fe; /* subtle blue */
+  }
+
+  .support-section{
+    background:
+      radial-gradient(1200px 500px at 20% 10%, rgba(110,168,254,.18), transparent 60%),
+      radial-gradient(900px 500px at 90% 20%, rgba(242,178,51,.14), transparent 55%),
+      linear-gradient(180deg, #070b13 0%, var(--yg-bg) 35%, #070b13 100%);
+    color: var(--yg-text);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .py-lg-6{ padding-top: 5rem !important; padding-bottom: 5rem !important; }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    font-size: .78rem;
+    color: var(--yg-muted);
+  }
+  .eyebrow::before{
+    content:"";
+    width: 34px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--yg-accent), transparent);
+    border-radius: 999px;
+  }
+
+  .glass-card{
+    background: var(--yg-surface);
+    border: 1px solid var(--yg-stroke);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.35);
+    backdrop-filter: blur(10px);
+  }
+
+  .accent-bar{
+    width: 10px;
+    height: 44px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, var(--yg-accent), rgba(242,178,51,.25));
+    box-shadow: 0 10px 30px rgba(242,178,51,.22);
+  }
+
+  .icon-list{
+    list-style: none;
+    display: grid;
+    gap: .85rem;
+  }
+
+  .icon-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:.75rem;
+    padding: .85rem 1rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255,.06);
+    background: rgba(255,255,255,.03);
+    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  }
+  .icon-list li:hover{
+    transform: translateY(-2px);
+    border-color: rgba(242,178,51,.22);
+    background: rgba(242,178,51,.06);
+  }
+
+  .check{
+    width: 28px;
+    height: 28px;
+    flex: 0 0 28px;
+    border-radius: 10px;
+    display:grid;
+    place-items:center;
+    color: #0b1220;
+    background: linear-gradient(180deg, rgba(242,178,51,.95), rgba(242,178,51,.65));
+    box-shadow: 0 10px 22px rgba(242,178,51,.20);
+    margin-top: 1px;
+  }
+  .check svg{ width: 18px; height: 18px; }
+
+  .pill{
+    display:inline-flex;
+    align-items:center;
+    padding:.18rem .55rem;
+    margin-left:.4rem;
+    border-radius:999px;
+    font-size:.78rem;
+    color: rgba(255,255,255,.85);
+    border: 1px solid rgba(242,178,51,.35);
+    background: rgba(242,178,51,.10);
+  }
+
+  .cta-card{
+    border-radius: 24px;
+    border: 1px solid rgba(110,168,254,.20);
+    background:
+      radial-gradient(700px 380px at 30% 20%, rgba(110,168,254,.22), transparent 60%),
+      linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+    box-shadow: 0 20px 70px rgba(0,0,0,.45);
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-card::after{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background: radial-gradient(600px 220px at 70% 10%, rgba(242,178,51,.18), transparent 55%);
+    pointer-events:none;
+  }
+
+  .badge-soft{
+    display:inline-flex;
+    align-items:center;
+    gap:.5rem;
+    padding:.35rem .7rem;
+    border-radius:999px;
+    border: 1px solid rgba(255,255,255,.10);
+    background: rgba(255,255,255,.05);
+    color: rgba(255,255,255,.82);
+    font-weight: 600;
+    font-size: .85rem;
+    position: relative;
+    z-index: 1;
+  }
+  .badge-soft .dot{
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--yg-accent);
+    box-shadow: 0 0 0 6px rgba(242,178,51,.15);
+  }
+
+  /* Bootstrap button overrides (without breaking theme) */
+  .btn-primary{
+    background: linear-gradient(180deg, rgba(110,168,254,1), rgba(90,140,230,1));
+    border: 0;
+  }
+  .btn-glow{
+    box-shadow: 0 16px 40px rgba(110,168,254,.25);
+  }
+  .btn-outline-light{
+    border-color: rgba(255,255,255,.25);
+  }
+  .btn-outline-light:hover{
+    background: rgba(255,255,255,.08);
+    border-color: rgba(255,255,255,.30);
+  }
+
+  .mini{
+    font-size: .95rem;
+    color: rgba(255,255,255,.75);
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Better typography on mobile */
+  @media (max-width: 576px){
+    .icon-list li{ padding: .75rem .85rem; border-radius: 14px; }
+    .glass-card, .cta-card{ border-radius: 20px; }
+  }
+
+.services-section{
+    background: linear-gradient(135deg, #f8f9fa, #eef2f7);
+  }
+
+  .service-card{
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(12px);
+    border-radius: 22px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* subtle shine */
+  .service-card::before{
+    content:"";
+    position:absolute;
+    inset:-40%;
+    background: radial-gradient(circle at 30% 20%, rgba(0,0,0,0.07), transparent 45%);
+    opacity:.0;
+    transition: opacity .25s ease;
+  }
+
+  .service-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 22px 45px rgba(0,0,0,0.12);
+    border-color: rgba(0,0,0,0.10);
+  }
+  .service-card:hover::before{ opacity: 1; }
+
+  .service-card ul{
+    padding-left: 18px;
+  }
+  .service-card ul li{
+    margin-bottom: 8px;
+    color:#555;
+  }
+
+  /* Icon badge */
+  .icon-badge{
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border: 1px solid rgba(0,0,0,0.08);
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    position: relative;
+    flex: 0 0 auto;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .icon-badge i{
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  /* Floating animation */
+  @keyframes floaty{
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  .icon-float{
+    animation: floaty 2.8s ease-in-out infinite;
+  }
+
+  /* stagger delays */
+  .delay-1{ animation-delay: 0s; }
+  .delay-2{ animation-delay: .2s; }
+  .delay-3{ animation-delay: .4s; }
+  .delay-4{ animation-delay: .6s; }
+
+  /* glow pulse */
+  @keyframes glow{
+    0%, 100% { box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+    50% { box-shadow: 0 14px 28px rgba(0,0,0,0.14); }
+  }
+  .icon-badge{
+    animation-name: floaty, glow;
+    animation-duration: 2.8s, 2.8s;
+    animation-timing-function: ease-in-out, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+  }
+
+  /* Hover: icon spins a bit + pops */
+  .service-card:hover .icon-badge{
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 18px 34px rgba(0,0,0,0.16);
+  }
+  .service-card:hover .icon-badge i{
+    animation: spinMini .6s ease;
+  }
+  @keyframes spinMini{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(12deg); }
+  }
+
+  /* CTA micro animation */
+  .btn-raise{
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-raise:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.20);
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .icon-badge, .icon-float, .btn-raise{ animation: none !important; transition: none !important; }
+    .service-card{ transition: none !important; }
+  }
+
+.textIsRed{
+  color: rgb(248, 2, 2);
+}
+@media screen {
+  .Bongani-img{
+    margin-left: -1%;
+    margin-top:-40%;
+     
+
+  }
+  
+  
+}
+     
+.hometext {
+  font-family: "Bodoni Moda", serif;
+  font-size: 3em;
+  font-weight: 500;
+  font-style: normal;
+  color:rgb(255, 255, 255);
+}
+
+.thisText {
+  font-family: "Bodoni Moda", serif;
+  font-size: 3em;
+  font-weight: 500;
+  font-style: normal;
+}
+.aboutApostle {
+  font-family: "Roboto";
+  font-size: 1em;
+  font-style: normal;
+}
+.nameOfApostle {
+  font-family: "Roboto";
+  font: weight 600px;
+  font-size: 1em;
+  font-style: normal;
+}
+.invite-text {
+  font-family: "Playfair Display";
+  font-size: 3em;
+  font-style: normal;
+}
+.testimonial-heading-text{
+  font-family: "Bodoni Moda";
+  font-size: 3em;
+  font-style: normal;
+  font-weight: 400;
+}
+.made-by-text {
+  font-family: "Monsieur La Doulaise", serif;
+  font-size: 2em ;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.motto-text {
+  font-family: "Playfair Display";
+  font-size: 3em;
+  font-style: normal;
+}
+
+
+    .schoolsLogo{
+        margin: 5%;
+        
+        height: 200px;
+        width: 200px;
+        
+    }
+    
+
+    
+
+    .activity{
+      color: rgb(223, 209, 23);
+    }
+   
+
+
+
+    .debateImg{
+      height: 120px; 
+      width: 120px;
+      border-radius: 5px;
+    }
+   
+
+    @media (min-width:900px) {
+      .schoolsLogo{
+        margin: 5%;
+        border-radius: 10%;
+        height: 500px;
+        width: 500px;
+        
+    } 
+    .homeimg{
+    height: 600px;
+   }
+   .churchLogo{
+    height: 250px;
+    width: 250px;
+    margin-left: 10%;
+    margin-top: -6%;
+   }
+    
+
+      
+    }
+
+    
+
+    
+    .flower{
+      height: 90px;
+      width: 90px;
+    }
+   .churchLogo{
+    z-index: 5; 
+    position: absolute; 
+    height:150px; 
+    width:150px; 
+    border-radius:50%; 
+    top:15%; 
+    left:35%;
+
+   }
+
+
+.Apostle_bongani_img{
+  height: 350px;
+  width: 200px;
+  
+
+};
+   
+services-section{
+    background: linear-gradient(135deg, #f8f9fa, #eef2f7);
+  }
+
+  .service-card{
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(12px);
+    border-radius: 22px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* subtle shine */
+  .service-card::before{
+    content:"";
+    position:absolute;
+    inset:-40%;
+    background: radial-gradient(circle at 30% 20%, rgba(0,0,0,0.07), transparent 45%);
+    opacity:.0;
+    transition: opacity .25s ease;
+  }
+
+  .service-card:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 22px 45px rgba(0,0,0,0.12);
+    border-color: rgba(0,0,0,0.10);
+  }
+  .service-card:hover::before{ opacity: 1; }
+    
+.service-card ul{
+    padding-left: 18px;
+  }
+  .service-card ul li{
+    margin-bottom: 8px;
+    color:#555;
+  }
+
+  /* Icon badge */
+  .icon-badge{
+    width: 48px;
+    height: 48px;
+    border-radius: 16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border: 1px solid rgba(0,0,0,0.08);
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    position: relative;
+    flex: 0 0 auto;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+
+  .icon-badge i{
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  /* Floating animation */
+  @keyframes floaty{
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  .icon-float{
+    animation: floaty 2.8s ease-in-out infinite;
+  }
+
+  /* stagger delays */
+  .delay-1{ animation-delay: 0s; }
+  .delay-2{ animation-delay: .2s; }
+  .delay-3{ animation-delay: .4s; }
+  .delay-4{ animation-delay: .6s; }
+
+  /* glow pulse */
+  @keyframes glow{
+    0%, 100% { box-shadow: 0 10px 20px rgba(0,0,0,0.08); }
+    50% { box-shadow: 0 14px 28px rgba(0,0,0,0.14); }
+  }
+  .icon-badge{
+    animation-name: floaty, glow;
+    animation-duration: 2.8s, 2.8s;
+    animation-timing-function: ease-in-out, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+  }
+
+  /* Hover: icon spins a bit + pops */
+  .service-card:hover .icon-badge{
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 18px 34px rgba(0,0,0,0.16);
+  }
+  .service-card:hover .icon-badge i{
+    animation: spinMini .6s ease;
+  }
+  @keyframes spinMini{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(12deg); }
+  }
+/* CTA micro animation */
+  .btn-raise{
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .btn-raise:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.20);
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .icon-badge, .icon-float, .btn-raise{ animation: none !important; transition: none !important; }
+    .service-card{ transition: none !important; }
+  }
+   
+  /* Soft premium background */
+.bg-soft{
+  background:
+    radial-gradient(1200px 500px at 10% 10%, rgba(13,110,253,.08), transparent 60%),
+    radial-gradient(900px 420px at 90% 20%, rgba(32,201,151,.10), transparent 55%),
+    linear-gradient(#fbfbfd, #f6f7fb);
+}
+
+/* Premium card look */
+.card-glass{
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255,255,255,.78);
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.08),
+    0 1px 0 rgba(255,255,255,0.9) inset;
+  backdrop-filter: blur(8px);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.card-glass:hover{
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 50px rgba(15, 23, 42, 0.10),
+    0 1px 0 rgba(255,255,255,0.9) inset;
+  border-color: rgba(13,110,253,.18);
+}
+
+/* Icon pill */
+.icon-chip{
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: #0d6efd;
+  background: rgba(13,110,253,.10);
+  border: 1px solid rgba(13,110,253,.15);
+}
+
+/* Values list (clean bullets) */
+.values-list{
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  gap: .55rem;
+}
+
+.values-list li{
+  position: relative;
+  padding-left: 1.35rem;
+  color: rgba(33, 37, 41, .85);
+  font-size: 1.05rem;
+}
+
+.values-list li::before{
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  position: absolute;
+  left: 0;
+  top: .6rem;
+  background: rgba(13,110,253,.9);
+}
+
+/* Mission blocks inside the mission card */
+.mission-block{
+  background: rgba(15, 23, 42, 0.03);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+/* Optional: slightly more breathing room on large screens */
+@media (min-width: 992px){
+  .py-lg-6{
+    padding-top: 4.5rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+}
+
+
+  :root{
+    --bg: #0b1220;
+    --panel: rgba(255,255,255,.06);
+    --panel2: rgba(255,255,255,.08);
+    --border: rgba(255,255,255,.12);
+    --text: rgba(255,255,255,.92);
+    --muted: rgba(255,255,255,.72);
+    --muted2: rgba(255,255,255,.58);
+    --shadow: 0 20px 60px rgba(0,0,0,.35);
+    --radius: 18px;
+    --radius2: 24px;
+
+    --brand1: #7c3aed; /* purple */
+    --brand2: #22c55e; /* green */
+    --warm1: #f97316;  /* orange */
+    --warm2: #ef4444;  /* red */
+  }
+
+  .events{
+    position: relative;
+    padding: clamp(56px, 6vw, 96px) 0;
+    background:
+      radial-gradient(900px 500px at 18% 20%, rgba(124,58,237,.22), transparent 60%),
+      radial-gradient(900px 500px at 80% 30%, rgba(34,197,94,.18), transparent 60%),
+      linear-gradient(180deg, #070b14, var(--bg));
+    color: var(--text);
+    overflow: hidden;
+  }
+
+  .events::before{
+    content:"";
+    position:absolute; inset:-2px;
+    background:
+      radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,.25), transparent 60%),
+      radial-gradient(1px 1px at 60% 15%, rgba(255,255,255,.20), transparent 60%),
+      radial-gradient(1px 1px at 85% 55%, rgba(255,255,255,.18), transparent 60%);
+    opacity:.35;
+    pointer-events:none;
+  }
+
+  .events__container{
+    width: min(1100px, calc(100% - 40px));
+    margin-inline: auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .events__header{
+    max-width: 760px;
+    margin-bottom: 26px;
+  }
+
+  .events__kicker{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,.04);
+    color: var(--muted);
+    font-size: 13px;
+    letter-spacing: .2px;
+  }
+  .events__spark{
+    width: 22px; height: 22px;
+    display:inline-grid;
+    place-items:center;
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(124,58,237,.55), rgba(34,197,94,.35));
+    border: 1px solid rgba(255,255,255,.18);
+  }
+
+  .events__title{
+    margin: 14px 0 10px;
+    font-size: clamp(30px, 3.4vw, 44px);
+    line-height: 1.12;
+    letter-spacing: -0.02em;
+  }
+  .events__subtitle{
+    margin: 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .events__grid{
+    display:grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 18px;
+    align-items: stretch;
+  }
+
+  .card{
+    border-radius: var(--radius2);
+    border: 1px solid var(--border);
+    background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
+    box-shadow: var(--shadow);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+  }
+
+  .card--featured{
+    position: relative;
+    background:
+      radial-gradient(700px 220px at 15% 0%, rgba(124,58,237,.24), transparent 55%),
+      radial-gradient(700px 220px at 85% 0%, rgba(34,197,94,.16), transparent 55%),
+      linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+    border-color: rgba(255,255,255,.16);
+  }
+
+  .card__top{
+    display:flex;
+    gap: 14px;
+    align-items:flex-start;
+  }
+
+  .card__icon{
+    width: 46px;
+    height: 46px;
+    display:grid;
+    place-items:center;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.18);
+    background: linear-gradient(135deg, rgba(124,58,237,.40), rgba(34,197,94,.22));
+    color: rgba(255,255,255,.92);
+    flex: 0 0 auto;
+  }
+  .card__icon svg{ width: 22px; height: 22px; }
+
+  .card__icon--warm{
+    background: linear-gradient(135deg, rgba(249,115,22,.35), rgba(239,68,68,.18));
+  }
+
+  .card__title{
+    margin: 0 0 6px;
+    font-size: 18px;
+    letter-spacing: -0.01em;
+  }
+  .card__desc{
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.6;
+    font-size: 14.5px;
+  }
+
+  .card__list{
+    margin: 14px 0 0;
+    padding-left: 18px;
+    color: rgba(255,255,255,.84);
+    line-height: 1.65;
+    font-size: 14.5px;
+  }
+  .card__list li{ margin: 8px 0; }
+  .card__list strong{ color: rgba(255,255,255,.95); font-weight: 650; }
+
+  .card__footer{
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.10);
+  }
+
+  .card__note{
+    margin: 0 0 14px;
+    color: var(--muted2);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .chips{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 10px 0 10px;
+  }
+  .chip{
+    display:inline-flex;
+    align-items:center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.14);
+    background: rgba(255,255,255,.04);
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .chip__dot{
+    width: 8px; height: 8px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--brand1), var(--brand2));
+    box-shadow: 0 0 0 4px rgba(124,58,237,.14);
+  }
+
+  .card__actions{
+    display:flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .btn{
+    appearance:none;
+    border: 1px solid rgba(255,255,255,.14);
+    padding: 10px 12px;
+    border-radius: 12px;
+    color: rgba(255,255,255,.92);
+    text-decoration:none;
+    font-size: 14px;
+    font-weight: 600;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    transition: transform .12s ease, background .12s ease, border-color .12s ease;
+    user-select:none;
+  }
+  .btn:focus{ outline: 2px solid rgba(124,58,237,.55); outline-offset: 2px; }
+
+  .btn--primary{
+    border-color: rgba(255,255,255,.18);
+    background: linear-gradient(135deg, rgba(124,58,237,.90), rgba(34,197,94,.70));
+  }
+  .btn--ghost{
+    background: rgba(255,255,255,.04);
+  }
+  .btn:hover{
+    transform: translateY(-1px);
+    border-color: rgba(255,255,255,.22);
+  }
+  .btn--primary:hover{
+    background: linear-gradient(135deg, rgba(124,58,237,.98), rgba(34,197,94,.78));
+  }
+
+  @media (max-width: 900px){
+    .events__grid{ grid-template-columns: 1fr; }
+    .card{ padding: 18px; }
+  }
+
+  /* Optional: nice font if available */
+  .events, .events *{
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  }
+
+
+.hero{
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Background image (replace URL) */
+  .hero-bg{
+    position:absolute; inset:0;
+    background-image: url("YOUR-HERO-IMAGE.jpg");
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.03);
+  }
+
+  /* Dark overlay for readability */
+  .hero-overlay{
+    position:absolute; inset:0;
+    background: linear-gradient(
+      90deg,
+      rgba(0,0,0,.70) 0%,
+      rgba(0,0,0,.55) 45%,
+      rgba(0,0,0,.35) 100%
+    );
+  }
+
+  /* Typography responsive scaling */
+  .hero-title{
+    font-size: clamp(2rem, 3.4vw, 3.6rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-lead{
+    max-width: 62ch; /* prevents super-wide lines on big screens */
+    font-size: clamp(1rem, 1.1vw, 1.2rem);
+    line-height: 1.7;
+  }
+
+  /* Glass panel */
+  .glass{
+    background: rgba(255,255,255,.08);
+    border: 1px solid rgba(255,255,255,.18);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  }
+
+  /* Extra spacing on large screens */
+  @media (min-width: 992px){
+    .py-lg-6{ padding-top: 5rem !important; padding-bottom: 5rem !important; }
+  }
+
+
+  
+  
+    </style>
+</head>
+<body>
+
+
+
+  <nav class="navbar navbar-expand-sm bg-tranparent "  >
+    <div class="container-fluid">
+
+      <h1 class="navbar-brand text-center"  >YoungGen</h1>
+      
+     
+
+      <a href="" >
+        <img src="IMAGES/YoungGen_logo.png" alt="" style="width: 40px; height: 40px; border-radius: 50%;">
+      </a>
+
+      
+     
+
+    </div>
+  </nav>
+  
+<!-- Hero section sm -->
+ <section class="d-md-none" >   
+  <div class="c" style="position:reletive;">
+    <img class="w-100 homeimg " src="IMAGES/457011509fab823b6f1a741465d79b0d.jpg"  alt="">
+    
+  
+     
+    <div style="z-index: 5; position: absolute; top:12%;">
+
+
+
+      <H1  class="text-white h1 text-bold" style="padding-left: 3px;">
+        Empowering Entrepreneurs. Transforming Lives.
+Shaping the Next Generation of Innovators & Leader
+      </H1>
+
+      <p class="text-white mt-3" style="margin-left: 4px;">
+        YoungGen Entrepreneurs Foundation is a purpose-driven non-profit company (NPC) dedicated to transforming South African communities by equipping learners, youth, and emerging small businesses with the entrepreneurial skills, knowledge, and mindset needed to thrive in a fast-changing world.
+      </p>
+
+      <div class="d-flex gap-2 flex-wrap mt-5" style="margin-left: 4px;">
+            <a class="btn btn-primary " href="#programmes">Explore Programmes</a>
+            <a class="btn btn-outline-light " href="#support">Support Our Work</a>
+      </div>
+      
+      <div class="row justify-content-center mt-5 mr-2 ms-1">
+      <div class="col-12 col-lg-10 col-xl-9">
+        <div class="glass p-4 p-lg-5 rounded-4">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-lg-7">
+              <h2 class="h4 fw-semibold mb-2 text-white">Awakening Your Entrepreneurial Mindset.</h2>
+              <p class="mb-0 text-white-50">
+                <li class="mb-0 text-white-50">082 719 4084</li>
+                <li class="mb-0 text-white-50">Gmail younggen735@gmail.com</li>
+                <li class="mb-0 text-white-50">Located in Mangaung, Bloemfontein, Free State</li>
+                
+              </p>
+            </div>
+            <div class="col-12 col-lg-5 d-flex gap-3 justify-content-lg-end flex-wrap">
+              <a href="#Upcoming_events" class="btn btn-light btn-lg text-black">Upcoming Events</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+      
+
+    </div>
+   
+</div>
+</section>
+<!-- Hero section lg-->
+<section class="d-none d-md-block hero position-relative text-white overflow-hidden">
+  <!-- Background image -->
+   
+  <div class="hero-bg">
+    </div>
+
+  <!-- Overlay -->
+  <div class="hero-overlay"></div>
+
+  <div class="container position-relative py-5 py-lg-6">
+    <div class="row">
+      <div class="col-12 col-lg-8 col-xl-7">
+
+        <h1 class="hero-title fw-semibold mb-3">
+          Empowering Entrepreneurs.<br class="d-none d-md-block">
+          Transforming Lives. Shaping the Next Generation of Innovators &amp; Leaders.
+        </h1>
+
+        <p class="hero-lead text-white-50 mb-4">
+          YoungGen Entrepreneurs Foundation is a purpose-driven non-profit company (NPC) dedicated to transforming South African
+          communities by equipping learners, youth, and emerging small businesses with the entrepreneurial skills, knowledge,
+          and mindset needed to thrive in a fast-changing world.
+        </p>
+
+        <div class="d-flex flex-column flex-sm-row gap-3">
+          <a href="#programmes" class="btn btn-primary btn-lg px-4">
+            Explore Programmes
+          </a>
+          <a href="#support" class="btn btn-outline-light btn-lg px-4">
+            Support Our Work
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bottom glass panel -->
+    <div class="row justify-content-center mt-5">
+      <div class="col-12 col-lg-10 col-xl-9">
+        <div class="glass p-4 p-lg-5 rounded-4">
+          <div class="row g-4 align-items-center">
+            <div class="col-12 col-lg-7">
+              <h2 class="h4 fw-semibold mb-2">Build skills. Create opportunities.</h2>
+              <p class="mb-0 text-white-50">
+                Discover programmes, mentorship, and hands-on training designed to help learners and entrepreneurs grow with confidence.
+              </p>
+            </div>
+            <div class="col-12 col-lg-5 d-flex gap-3 justify-content-lg-end flex-wrap">
+              <a href="#events" class="btn btn-light btn-lg text-black">Upcoming Events</a>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="about us " class="bg-light">
+    <div class="container-md ">
+      <div class="thisText text-center">About us</div>
+      <p class="text-center">What would you like to know ?</p>
+      <div class="row my-5 g-5 justify-content-around align-items-center bg-light" style="padding-bottom:70px;">
+        <!-- accordion -->
+        <div class="justify-centent-center">
+        <div class="accordion accordion-flush bg-black " id="grades">
+
+  
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="grade-12" >
+            <button class="accordion-button collapsed  " 
+            type="button" 
+            data-bs-toggle="collapse"
+            data-bs-target="#grade-12-info"
+             aria-expanded="true" 
+             aria-controls="grade-12-info"
+            ><h6 class="">Who are we  </h6></button>
+          </h2>
+          <div id="grade-12-info" 
+          class="accordion-collapse collapse " 
+          aria-labelledby="grade-12"
+          data-bs-parent="#grades">
+              <div class="accordion-body">
+                <p>
+                   Established in 2022, the YoungGen Entrepreneurs Foundation (NPC: 2022 / 588206 / 08) 
+                   was founded by <strong>Mathuto Adoro</strong>, a seasoned entrepreneur, transformation
+                    coach, and PhD candidate in Entrepreneurship. YoungGen was created in response to rising 
+                    unemployment, youth disengagement, and the urgent need to introduce young people to entrepreneurship 
+                    from an early age.  YoungGen also focuses on building <strong>resilient and sustainable SMEs</strong>, 
+                    recognising the tough conditions South African entrepreneurs face. By developing their skills, 
+                    mindsets, and strategic capabilities, YoungGen helps entrepreneurs adapt to challenges and build 
+                    stronger, more competitive, and future-ready small businesses. The organisation is headquartered in 
+                    <strong>Mangaung, Bloemfontein</strong>, and works across schools, communities, and youth development
+                     spaces to empower the young generation of entrepreneurs.
+                </p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="accordion-item">
+    <h2 class="accordion-header" id="grade-10" >
+      <button class="accordion-button collapsed text " 
+      type="button" 
+      data-bs-toggle="collapse"
+      data-bs-target="#grade-10-info"
+       aria-expanded="false" 
+       aria-controls="grade-10-info"
+      > <h6 class="">Our Purpose</h6> </button>
+    </h2>
+    <div id="grade-10-info" 
+    class="accordion-collapse collapse " 
+    aria-labelledby="grade-10"
+    data-bs-parent="#grades">
+        <div class="accordion-body">
+          <p class="">
+            We <strong>empower and equip learner, youth, and emerging entrepreneurs</strong> with
+            entrepreneurship education, leadership development and mindset-shifting support that unlocks real
+            opportunities. We believe that every young person and entrepreneur can build lead and innovate 
+            when provided with the right tools, guidance and encouragement. 
+          </p>
+        </div>  
+      </div>
+        </div>
+  
+        <div class="accordion-item">
+    <h2 class="accordion-header" id="grade-9" >
+      <button class="accordion-button collapsed text " 
+      type="button" 
+      data-bs-toggle="collapse"
+      data-bs-target="#grade-9-info"
+       aria-expanded="false" 
+       aria-controls="grade-9-info"
+      > <h6 class="">Our Impact</h6></button>
+    </h2>
+    <div id="grade-9-info" 
+    class="accordion-collapse collapse " 
+    aria-labelledby="grade-9"
+    data-bs-parent="#grades">
+        <div class="accordion-body">
+          <p class="">
+            Since 2022, YoungGen has been transforming the future of young people through practical 
+            entrepreneurship education and empowerment programmes.
+            Our journey began with online entrepreneurial classes for learners in Grades
+            4–12, followed by Saturday physical classes launched at Lebone Village 
+            (2022–2023). In 2023, YoungGen hosted its first flagship seminar for learners, 
+            youth, and young entrepreneurs — marking a major milestone in our growth. This 
+            was followed by a series of youth entrepreneurship seminars, learner empowerment
+            sessions, entrepreneurship tours, and one on one coaching programmes.
+            Over the past four years, our programmes have shaped a movement of confidence, 
+            ambition, and action among young people. Learners have rediscovered their dreams, 
+            pursued their studies with renewed purpose, and taken bold steps toward their 
+            goals. Aspiring entrepreneurs have received mentorship, launched new ventures,
+            and those already in business have shown inspiring growth under our guidance.
+            
+            
+
+          </p>
+          <p class="">
+            <h3>How We Create Impact</h3>
+            <li class="h6">Weekly Online & Saturday Entrepreneurship Classes Youth & Entrepreneurship Seminars</li> 
+            <p>— connecting aspiring entrepreneurs with industry experts, role models, and opportunities</p>
+            <li class="h6">One-on-One Coaching & Mentorship Programme </li> <p>— practical guidance to build and grow sustainable ventures</p>
+          </p>
+        </div>  
+      </div>
+        </div>
+  
+        <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed  " type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseOne">
+           <div class="h6">Future Plans</div>
+          </button>
+        </h2>
+        <div id="flush-collapseThree" class="accordion-collapse collapse  " data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">
+
+           <p class="h6">We are committed to long-term, sustainable empowerment through:</p>
+
+<li>Expansion of advanced online learning programmes</li> 
+<Li>Entrepreneurship bootcamps & accelerator series</Li> 
+<Li>Launch of YoungGen Startup Incubator</Li>
+<Li>Global partnerships for exposure and cross-learning</Li>
+<li>and innovation in youth entrepreneurship</li> 
+<li>Policy advocacy for youth-friendly business environments</li>
+<li>Community-driven entrepreneurship events</li>
+<li>Social impact programmes addressing global challenges
+
+</li>
+
+<p class="h6">YoungGen is building a movement — and we invite you to be part of it.</p>
+          </div>
+        </div>
+      </div>
+   
+  
+        </div>  
+        </div>
+  
+      </div>
+
+    </div>
+</section>
+
+<section class="pastor " style="margin-left: 3px;">
+  <div class="container-lg">
+
+    <div class=" text h4">Meet Mathuto Adoro </div>
+     <p class="text">           
+        Founder • CEO • Transformation Coach • Entrepreneur
+        </p>
+    <div class="thisText text" >Our Leader</div>
+    
+    <div class="row  justify-centent-center">
+
+      <div class="col-6" >
+       
+        <p class=" aboutApostle text ">
+          MBA | PhD Candidate | Postgraduate Diploma in Project Management 
+        </p>
+        <p class="d-md-none ">
+          Mathuto Adoro's journey is anchored in purpose, resilience, 
+          and a deep conviction that young people deserve opportunities 
+          that can transform the direction of their lives. 
+          <a href="" 
+          class="accordion-button collapsed text-primary" 
+          data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseOne" 
+          aria-expanded="false" 
+          aria-controls="flush-collapseOne"
+          
+          >more</a>
+        </p>
+
+        <p class="d-none d-md-block margin-left">
+          Mathuto Adoro's journey is anchored in purpose, resilience, 
+          and a deep conviction that young people deserve opportunities 
+          that can transform the direction of their lives.
+          With over 15 years of experience across the public and private 
+          sectors, she has applied her expertise in project management, 
+          advisory roles, and entrepreneurship coaching to strengthen 
+          communities and drive meaningful development.
+          But her calling extended beyond professional excellence. 
+          Moved by a passion to see young people rise above their circumstances, 
+          Mathuto founded the *YoungGen Entrepreneurs Foundation* — a movement 
+          designed to ignite creativity, build confidence, and empower learners,
+          youth, and emerging entrepreneurs to dream boldly and lead with intention.
+          As a mentor, spiritual leader, and speaker, she brings heart, clarity, and
+           vision to every space she enters. Her mission remains simple yet profound: 
+           to awaken the entrepreneurial mindset and guide the next generation toward purpose, 
+           leadership, and transformational impact.
+        </p>
+
+      </div>
+
+      <div class="col-6">
+        <img src="IMAGES/lv_0_20260221010712.png" sizes="160" class=" d-md-none Apostle_bongani_img d-block w-100">
+        <img src="IMAGES/lv_0_20260221010712.png" class="d-none d-md-block  Apostle_bongani_img_lg d-block w-100">
+      </div>
+      <p id="flush-collapseOne" 
+      class="accordion-collapse collapse  " 
+      data-bs-parent="#accordionFlushExample"
+      >
+        With over 15 years of experience across the public and private sectors, she has applied her expertise in project management, advisory roles, and entrepreneurship coaching to strengthen communities and drive meaningful development.
+        But her calling extended beyond professional excellence. Moved by a passion to see young people rise above their circumstances, Mathuto founded the *YoungGen Entrepreneurs Foundation* — a movement designed to ignite creativity, build confidence, and empower learners, youth, and emerging entrepreneurs to dream boldly and lead with intention.
+        As a mentor, spiritual leader, and speaker, she brings heart, clarity, and vision to every space she enters. Her mission remains simple yet profound: to awaken the entrepreneurial mindset and guide the next generation toward purpose, leadership, and transformational impact.
+      </p>
+  </div>
+</section>
+
+<!-- carousel section lg-->
+<section class="py-5">
+  <div class="container">
+    <div class="d-flex align-items-end justify-content-between gap-3 mb-3">
+      <div>
+        <h2 class="mb-1">Gallery</h2>
+        <p class="text-muted mb-0">Swipe through highlights</p>
+      </div>
+      <div class="text-muted small d-none d-md-block">Drag / swipe on touch</div>
+    </div>
+
+    <div id="eventCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-touch="true">
+      <!-- Indicators -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row g-3">
+            <div class="col-12 col-lg-6">
+              <a class="gallery-card" href="images/IMG-20260220-WA0006.jpg" target="_blank" rel="noreferrer">
+                <img src="IMAGES/IMG-20260220-WA0006.jpg" class="w-100" alt="Event photo 1">
+              </a>
+            </div>
+            <div class="col-12 col-lg-6 d-none d-lg-block">
+              <a class="gallery-card" href="images/IMG-20260220-WA0025.jpg" target="_blank" rel="noreferrer">
+                <img src="images/IMG-20260220-WA0014.jpg" class="w-100" alt="Event photo 2">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row g-3">
+            <div class="col-12 col-lg-6">
+              <a class="gallery-card" href="images/IMG-20260220-WA0037.jpg" target="_blank" rel="noreferrer">
+                <img src="IMAGES/IMG-20260220-WA0025.jpg" class="w-100" alt="Event photo 3">
+              </a>
+            </div>
+            <div class="col-12 col-lg-6 d-none d-lg-block">
+              <a class="gallery-card" href="images/IMG-20260220-WA0006.jpg" target="_blank" rel="noreferrer">
+                <img src="IMAGES/IMG-20260220-WA0026.jpg" class="w-100" alt="Event photo 4">
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="row g-3">
+            <div class="col-12 col-lg-6">
+              <a class="gallery-card" href="images/photo-5.jpg" target="_blank" rel="noreferrer">
+                <img src="IMAGES/IMG-20260220-WA0037.jpg" class="w-100" alt="Event photo 5">
+              </a>
+            </div>
+            <div class="col-12 col-lg-6 d-none d-lg-block">
+              <a class="gallery-card" href="images/photo-6.jpg" target="_blank" rel="noreferrer">
+                <img src="IMAGES/IMG-20260220-WA0040.jpg" class="w-100" alt="Event photo 6">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+
+  /* High-end card feel */
+  .gallery-card{
+    display:block;
+    border-radius: 18px;
+    overflow:hidden;
+    background:#0b0f16;
+    box-shadow: 0 16px 40px rgba(0,0,0,.18);
+    transform: translateZ(0);
+  }
+  .gallery-card img{
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    transition: transform .5s ease, filter .5s ease;
+    filter: saturate(1.03) contrast(1.02);
+  }
+  .gallery-card:hover img{
+    transform: scale(1.03);
+  }
+
+  /* Make arrows look cleaner */
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon{
+    filter: drop-shadow(0 8px 14px rgba(0,0,0,.45));
+  }
+
+  /* Nicer indicators */
+  .carousel-indicators [data-bs-target]{
+    width: 10px; height: 10px;
+    border-radius: 999px;
+    opacity: .35;
+  }
+  .carousel-indicators .active{ opacity: 1; }
+</style>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample1" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title h3" id="offcanvasExampleLabel">Entrepreneurship Education for Learners (Grade 4–12)</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+
+    
+      <h6 class="fw-bold mb-3">Programme Goals</h6>
+              <ul class="mb-0">
+                <li>Develop critical thinking and problem-solving abilities</li>
+                <li>Teach foundational & practical business concepts</li>
+                <li>Encourage creativity and innovation</li>
+                <li>Propare hands-on business experience</li>
+                <li>Prepare learners for the future economy</li>
+                <li>Build strong support systems systems through mentorships & school partnerships</li>
+              </ul>
+
+      <h6 class="fw-bold mb-3 mt-5">Learning Experiences include</h6>
+              <ul class="mb-0">
+                <li>Entrepreneurship classes</li>
+                <li>School-based projects & mini-businesses</li>
+                <li>innovation challenges </li>
+                <li>Workshops & camps</li>
+                <li>leadership and confidence-building activities</li>
+              </ul>
+
+  </div>
+</div>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title h3" id="offcanvasExampleLabel h3">Youth & Emerging Small Business Entrepreneurship</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    
+      <h6 class="fw-bold mb-3">Programme Goals</h6>
+              <ul class="mb-0">
+                <li>Develop strong entrepreneurial mindsets</li>
+                <li>Equip youth with tangible business skills</li>
+                <li>Build innovation, creativity, and resilience</li>
+                <li>Support small businesses with practical tools and networks</li>
+                <li>Encourage socially responsible and sustainable ventures</li>
+                <li>Position entrepreneurship as a viable and exciting career path</li>
+              </ul>
+
+      <h6 class="fw-bold mb-3 mt-5">What Participants Gain</h6>
+              <ul class="mb-0">
+                <li>Expert-led workshops</li>
+                <li>Mentorship & one-on-one coaching</li>
+                <li>Business development resources</li>
+                <li>Access to networks & partnerships</li>
+                <li>Pitching opportunities</li>
+                <li>Advisory support</li>
+              </ul>
+  </div>
+</div>
+
+<section class="py-5 py-lg-6 bg-soft " id="about">
+  <div class="container">
+    <div class="text-center mb-4 mb-lg-5">
+      
+      <h2 class="mt-3 mb-2 display-6 fw-bold">Building Entrepreneurs for South Africa & Beyond</h2>
+      <p class="text-secondary mb-0 mx-auto" style="max-width: 760px;">
+        Our vision, values, and mission guide how we empower learners, youth, and emerging businesses.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Our Vision -->
+      <div class="col-12 col-lg-6">
+        <div class="card card-glass h-100">
+          <div class="card-body p-4 p-lg-5">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="icon-chip">
+                <!-- Bootstrap icon (optional) -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                  <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8z"/>
+                  <path d="M8 5a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+                </svg>
+              </div>
+              <h3 class="h4 fw-bold mb-0">Our Vision</h3>
+            </div>
+
+            <p class="text-secondary fs-5 mb-0">
+              To produce a dynamic and successful generation of entrepreneurs in South Africa and beyond.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Our Values -->
+      <div class="col-12 col-lg-6">
+        <div class="card card-glass h-100">
+          <div class="card-body p-4 p-lg-5">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="icon-chip">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
+                  <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.8 3.5a.5.5 0 0 1 0 .6l-7.5 10a.5.5 0 0 1-.8 0l-7.5-10a.5.5 0 0 1 0-.6L3.1.7z"/>
+                </svg>
+              </div>
+              <h3 class="h4 fw-bold mb-0">Our Values</h3>
+            </div>
+
+            <ul class="values-list mb-0">
+              <li>Accountability</li>
+              <li>Determination</li>
+              <li>Honesty</li>
+              <li>Integrity</li>
+              <li>Self-discipline</li>
+              <li>Passion</li>
+              <li>Sound Judgement</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Our Mission (full width) -->
+      <div class="col-12">
+        <div class="card card-glass">
+          <div class="card-body p-4 p-lg-5">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div class="icon-chip">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-flag" viewBox="0 0 16 16">
+                  <path d="M14.778.085A.5.5 0 0 1 15 .5v9a.5.5 0 0 1-.778.416L11 8.101l-3.222 1.815A.5.5 0 0 1 7 9.5v-9a.5.5 0 0 1 .778-.416L11 1.899l3.222-1.814a.5.5 0 0 1 .556 0z"/>
+                  <path d="M2 15.5a.5.5 0 0 1-1 0V1.5a.5.5 0 0 1 1 0v14z"/>
+                </svg>
+              </div>
+              <h3 class="h4 fw-bold mb-0">Our Mission</h3>
+            </div>
+
+            <div class="row g-4">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 p-lg-4 rounded-4 mission-block">
+                  <h4 class="h5 fw-bold mb-2">Education for Empowerment <span class="text-secondary fw-semibold">(Grades 4–12)</span></h4>
+                  <p class="text-secondary mb-0">
+                    Providing learners with entrepreneurship skills, critical thinking abilities, creativity, and exposure needed
+                    to dream boldly and innovate.
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-12 col-lg-6">
+                <div class="p-3 p-lg-4 rounded-4 mission-block">
+                  <h4 class="h5 fw-bold mb-2">Empowering Youth &amp; Emerging Small Businesses</h4>
+                  <p class="text-secondary mb-0">
+                    Offering training, coaching, mentorship, and advisory support to young entrepreneurs and small business owners.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section id="programmes" class="py-5 bg-light">
+  <div class="container py-lg-4">
+    <!-- Heading -->
+    <div class="text-center mb-4 mb-lg-5">
+      <h2 class="display-4 fw-semibold mb-2">Our Programmes</h2>
+      <p class="text-muted col-12 col-lg-7 mx-auto mb-0">
+        Practical entrepreneurship programmes designed for youth, learners, and emerging entrepreneurs.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="row g-4 g-lg-5 justify-content-center">
+      <!-- Card 1 -->
+      <div class="col-12 col-md-6 col-lg-5 col-xl-4">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          <div class="card-body p-4 p-lg-5 d-flex flex-column">
+            <h3 class="h4 fw-bold mb-3">
+              Youth &amp; Emerging Small Business Entrepreneurship
+            </h3>
+
+            <p class="text-muted lh-lg mb-4 flex-grow-1">
+              A flagship empowerment initiative designed to transform young people into strategic thinkers,
+              problem solvers and business leaders.
+            </p>
+
+            <div class="mt-auto">
+              <a  data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" class="btn btn-primary px-4 py-2 rounded-3">
+                View
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-12 col-md-6 col-lg-5 col-xl-4">
+        <div class="card h-100 shadow-sm border-0 rounded-4">
+          <div class="card-body p-4 p-lg-5 d-flex flex-column">
+            <h3 class="h4 fw-bold mb-3">
+              Entrepreneurship Education for Learners (Grade 4–12)
+            </h3>
+
+            <p class="text-muted lh-lg mb-4 flex-grow-1">
+              A transformation programme introducing entrepreneurship early to inspire curiosity, creativity
+              and confidence.
+            </p>
+
+            <div class="mt-auto">
+              <a data-bs-toggle="offcanvas" href="#offcanvasExample1" role="button" aria-controls="offcanvasExample1" class="btn btn-primary px-4 py-2 rounded-3">
+                View
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-section py-5">
+  <div class="container">
+
+    <!-- Section Header -->
+    <div class="text-center mb-5">
+      <span class="badge bg-dark-subtle text-dark px-3 py-2 rounded-pill mb-3">
+        Our Services
+      </span>
+      <h2 class="fw-bold display-6">Build Skills. Build Confidence. Build a Future.</h2>
+      <p class="text-muted col-lg-6 mx-auto">
+        A comprehensive suite of development services designed to equip learners,
+        youth, and entrepreneurs with practical tools and support.
+      </p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-6">
+        <div class="service-card p-4 h-100">
+          <div class="d-flex align-items-start gap-3">
+            <div class="icon-badge icon-float delay-1">
+              <i class="bi bi-mortarboard-fill">✦</i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-1">Entrepreneurship Education</h5>
+              <div class="small text-muted">Grade 4–12</div>
+              <ul class="mt-3 mb-0">
+                <li>Structured curriculum</li>
+                <li>Workshops & experiential learning</li>
+                <li>Practical real-world projects</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-6">
+        <div class="service-card p-4 h-100">
+          <div class="d-flex align-items-start gap-3">
+            <div class="icon-badge icon-float delay-2">
+              <i class="bi bi-people-fill">✦</i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-1">Youth & Small Business Empowerment</h5>
+              <div class="small text-muted">Training • Advisory • Networking</div>
+              <ul class="mt-3 mb-0">
+                <li>Skills development</li>
+                <li>Business mentorship</li>
+                <li>Professional networking access</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-6">
+        <div class="service-card p-4 h-100">
+          <div class="d-flex align-items-start gap-3">
+            <div class="icon-badge icon-float delay-3">
+              <i class="bi bi-briefcase-fill">✦</i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-1">Business Coaching & Mentorship</h5>
+              <div class="small text-muted">1:1 & Group Sessions</div>
+              <ul class="mt-3 mb-0">
+                <li>Founder-led coaching</li>
+                <li>Strategic planning</li>
+                <li>Execution accountability</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-6">
+        <div class="service-card p-4 h-100">
+          <div class="d-flex align-items-start gap-3">
+            <div class="icon-badge icon-float delay-4">
+              <i class="bi bi-lightning-charge-fill">✦</i>
+            </div>
+            <div>
+              <h5 class="fw-bold mb-1">Workshops, Seminars & Bootcamps</h5>
+              <div class="small text-muted">High-Impact Events</div>
+              <ul class="mt-3 mb-0">
+                <li>Industry speakers</li>
+                <li>Annual flagship events</li>
+                <li>Entrepreneur networking</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    
+
+  </div>
+</section>
+
+<section id="Upcoming_events" class="events" aria-labelledby="events-title">
+  <div class="events__container">
+    <header class="events__header">
+      <div class="events__kicker">
+        
+      </div>
+      <h2 id="events-title" class="events__title">New &amp; Upcoming Events</h2>
+      <p class="events__subtitle text-white">
+        Book a coaching session or join our annual Ignite Seminar—designed to help learners, youth, and emerging entrepreneurs
+        grow with clarity, confidence, and purpose.
+      </p>
+    </header>
+
+    <div class="events__grid">
+      <!-- Card 1 -->
+      <article class="card card--featured">
+        <div class="card__top">
+          <div class="card__icon" aria-hidden="true">
+            <!-- bookmark/check icon -->
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M7 3h10a2 2 0 0 1 2 2v16l-7-4-7 4V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" />
+              <path d="m9 10 2 2 4-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div class="card__meta">
+            <h3 class="card__title text-white">Book Your Coaching Session Today</h3>
+            <p class="card__desc">
+              Unlock your full potential through personalised one-on-one coaching sessions designed for learners, youth,
+              and emerging entrepreneurs.
+            </p>
+          </div>
+        </div>
+
+        <ul class="card__list">
+          <li><strong>Clarity</strong> on your personal, academic, and entrepreneurial goals</li>
+          <li><strong>Confidence</strong> to take meaningful action</li>
+          <li><strong>Direction</strong> to navigate your journey with purpose and strategy</li>
+        </ul>
+
+        <div class="card__footer">
+          <p class="card__note">
+            Whether you’re just beginning or ready to grow to the next level, our coaching helps you move forward with intention.
+          </p>
+
+          
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card">
+        <div class="card__top">
+          <div class="card__icon card__icon--warm" aria-hidden="true">
+            <!-- flame icon -->
+            <svg viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 2s3 3 3 6-2 4-2 4 1-4-4-6c0 0-4 3-4 8a7 7 0 0 0 14 0c0-5-4-8-4-8"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+          <div class="card__meta">
+            <h3 class="card__title text-white">YoungGen Career &amp; Entrepreneurship Ignite Seminar</h3>
+
+            <div class="chips" role="list" aria-label="Event details">
+              <span class="chip" role="listitem">
+                <span class="chip__dot" aria-hidden="true"></span>
+                Date: <strong>06 June 2026</strong>
+              </span>
+              <span class="chip" role="listitem">Annual Event</span>
+            </div>
+
+            <p class="card__desc">
+              Prepare for one of our most transformative annual events. The Ignite Seminar brings together:
+            </p>
+          </div>
+        </div>
+
+        <ul class="card__list">
+          <li>Learners (Grades 8–12)</li>
+          <li>Youth</li>
+          <li>Emerging Entrepreneurs</li>
+        </ul>
+
+        <p class="card__note">
+          Participants gain career guidance, future-focused insights, digital-age opportunities, hands-on entrepreneurship skills,
+          and the resilience mindset needed to thrive.
+        </p>
+
+        
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="support" class="support-section py-5 py-lg-6">
+  <div class="container">
+    <!-- Eyebrow + heading -->
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10 col-xl-9 text-center">
+        <div class="eyebrow mb-2">YoungGen</div>
+
+        <h2 class="display-6 fw-semibold mb-3">
+          Support Our Work
+        </h2>
+
+        <p class="lead text-muted mb-4 text-white-50">
+          As a non-profit, our impact is fueled by donors, partners, and supporters who believe
+          in the power of youth entrepreneurship.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-4 align-items-stretch justify-content-center">
+      <!-- Left: Contribution list -->
+      <div class="col-12 col-lg-7">
+        <div class="glass-card h-100 p-4 p-lg-5">
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div class="accent-bar"></div>
+            <div>
+              <h3 class="h4 fw-semibold mb-1">How You Can Contribute</h3>
+              <p class="text-muted mb-0 text-white-50">Flexible ways to help us grow the movement.</p>
+            </div>
+          </div>
+
+          <ul class="icon-list m-0 p-0">
+            <li>
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              One-time donations
+            </li>
+            <li>
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Monthly giving <span class="pill">Partner with a purpose</span>
+            </li>
+            <li>
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Sponsorship of learners or entrepreneurs
+            </li>
+            <li>
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Corporate partnerships
+            </li>
+            <li>
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              In-kind resource support
+            </li>
+            <li>
+              <span class="check">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              Event sponsorship
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right: CTA card -->
+      <div class="col-12 col-lg-5">
+        <div class="cta-card h-100 p-4 p-lg-5 d-flex flex-column">
+          <div class="mb-4">
+            <div class="badge-soft mb-3">
+              <span class="dot"></span> Make an impact today
+            </div>
+            <h3 class="h4 fw-semibold mb-2">Help us fund the next generation of builders.</h3>
+            <p class="text-muted mb-0 text-white-50">
+              Your support powers programs, mentorship, and opportunities for young entrepreneurs.
+            </p>
+          </div>
+
+          <div class="mt-auto">
+            <div class="d-grid gap-2">
+              <a href="#" class="btn btn-primary btn-lg btn-glow">
+                Donate Now
+                <span class="ms-2">→</span>
+              </a>
+              <a href="#" class="btn btn-outline-light btn-lg">
+                Become a Partner
+              </a>
+            </div>
+
+            <div class="mini mt-3">
+              Prefer email? <a class="link-light fw-semibold" href="mailto:partners@younggen.org">younggen735@gmail.com</a> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="the "style="height: 20%;" class="bg-light">
+  
+    <div class="container-lg" >  
+
+      <div class="text-center">
+        <h3 class="display-4 testimonial-heading-text text">Contact us</h3>
+        <p class="text-black">
+          <p class="h2">Let’s awaken entrepreneurial greatness.</p>
+
+          
+            <strong>Phone:</strong><a href="tel:+27827194084"> 082 719 4084</a>
+    
+           
+            <strong>Email:</strong><a href="mailto:younggen735@gmail.com" >younggen735@gmail.com</a> 
+          
+
+           
+         <p class="h2">Location: Mangaung, Bloemfontein, Free State</p> 
+        </p>
+      </div> 
+
+  </div>
+
+  <div  style="border-bottom: 1px solid rgb(189, 188, 188); margin-right: 35%; margin-left: 35%; margin-bottom: 5%;"></div>
+
+  
+  
+ 
+
+
+</footer>
+
+<!--  offcanvas -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+      <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
